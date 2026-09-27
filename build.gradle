@@ -68,8 +68,9 @@ dependencies {
     compileOnly fg.deobf("curse.maven:zenutil-401178:8385068")
     implementation fg.deobf("curse.maven:champions-307152:3177947")
     implementation fg.deobf("curse.maven:baubley-elytra-658616:8211161")
-    compileOnly fg.deobf("curse.maven:in-control-257356:3101719")
-    compileOnly fg.deobf("com.github.mcjty:mcjtytools:1.12-0.0.21")
+    implementation fg.deobf("curse.maven:in-control-257356:3101719")
+    implementation fg.deobf("com.github.mcjty:mcjtytools:1.12-0.0.21")
+    implementation fg.deobf("curse.maven:baubles-227083:2518667")
 }
 
 mixin {

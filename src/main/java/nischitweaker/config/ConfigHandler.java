@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import nischitweaker.Tags;
 import nischitweaker.config.folders.BaubleyElytraConfig;
 import nischitweaker.config.folders.ChampionsConfig;
+import nischitweaker.config.folders.InControlConfig;
 import nischitweaker.config.folders.ZenUtilsConfig;
 
 @BetterConfig(
@@ -18,6 +19,9 @@ import nischitweaker.config.folders.ZenUtilsConfig;
 		lowerCaseCategories = false
 )
 public class ConfigHandler {
+
+	@Config.Name("In Control!")
+	public static InControlConfig incontrol = new InControlConfig();
 
 	@Config.Name("ZenUtils")
 	public static ZenUtilsConfig zenutils = new ZenUtilsConfig();
