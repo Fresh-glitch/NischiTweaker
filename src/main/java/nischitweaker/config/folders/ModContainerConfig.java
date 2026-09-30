@@ -2,10 +2,7 @@ package nischitweaker.config.folders;
 
 import net.minecraftforge.common.config.Config;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 public class ModContainerConfig {
 
@@ -19,6 +16,13 @@ public class ModContainerConfig {
         removedDependencies.put("zenutils", new ArrayList<>(Collections.singletonList("configanytime")));
         removedDependencies.put("distanthorizons", new ArrayList<>(Collections.singletonList("mixinbooter")));
     }
+
+    @Config.Comment("List of classes to replace ConfigAnytime.register with zenutils ConfigAnytimeAnytime.register")
+    @Config.Name("ConfigAnytime Dependency Replacements (ASM Toggle)")
+    public List<String> configAnytimeClassPatches = new ArrayList<>(Arrays.asList(
+            "youyihj.zenutils.impl.core.Configuration",
+            "git.jbredwards.baubleye.PatchConfigs"
+    ));
 
     public ModContainerConfig() {
         initRemovedDependencies();

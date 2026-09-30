@@ -5,9 +5,8 @@ import fermiumbooter.util.FermiumJarScanner;
 import net.minecraft.launchwrapper.Launch;
 import net.minecraftforge.fml.relauncher.CoreModManager;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
-import nischitweaker.asm.baubleyelytra.PatchConfigClassTransformer;
+import nischitweaker.asm.ConfigAnytimeClassTransformer;
 import nischitweaker.asm.distanthorizons.DistantHorizonsMixinConnectorTransformer;
-import nischitweaker.asm.zenutils.ConfigurationClassTransformer;
 import nischitweaker.config.ConfigHandler;
 import org.apache.commons.lang3.StringUtils;
 import org.spongepowered.asm.mixin.MixinEnvironment;
@@ -18,11 +17,8 @@ import java.util.Map;
 public class NischiTweakerPlugin implements IFMLLoadingPlugin {
 
 	public NischiTweakerPlugin() {
-		if(FermiumJarScanner.isModPresent("zenutils")) {
-			Launch.classLoader.registerTransformer(ConfigurationClassTransformer.class.getName());
-			if(FermiumJarScanner.isModPresent("baubleye"))
-				Launch.classLoader.registerTransformer(PatchConfigClassTransformer.class.getName());
-		}
+		if(FermiumJarScanner.isModPresent("zenutils"))
+			Launch.classLoader.registerTransformer(ConfigAnytimeClassTransformer.class.getName());
 		if(FermiumJarScanner.isModPresent("distanthorizons"))
 			Launch.classLoader.registerTransformer(DistantHorizonsMixinConnectorTransformer.class.getName());
 
