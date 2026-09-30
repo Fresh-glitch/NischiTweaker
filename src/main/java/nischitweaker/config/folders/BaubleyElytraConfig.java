@@ -8,6 +8,6 @@ import nischitweaker.Tags;
 public class BaubleyElytraConfig {
 
     @Config.Comment("Makes Baubley Elytra not depend on ConfigAnytime but on ZenUtils.")
-    @Config.Name("Remove ConfigAnytime Dependency (MixinToggle)")
+    @Config.Name("Replace ConfigAnytime Dependency (ASM Toggle)")
     public boolean removeConfigAnytimeDependency = true;
 }

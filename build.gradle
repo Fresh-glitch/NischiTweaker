@@ -24,6 +24,7 @@ minecraft {
 //            jvmArg "-Dmixin.hotSwap=true"
             jvmArg "-Dmixin.checks.interfaces=true"
             jvmArg "-Dmixin.debug.export=true"
+            jvmArg "-Dmeldexun.asm.export=true"
 
             workingDirectory project.file('run')
 
@@ -37,6 +38,7 @@ minecraft {
 //            jvmArg "-Dmixin.hotSwap=true"
             jvmArg "-Dmixin.checks.interfaces=true"
             jvmArg "-Dmixin.debug.export=true"
+            jvmArg "-Dmeldexun.asm.export=true"
 
             workingDirectory project.file('run')
 
@@ -71,6 +73,7 @@ dependencies {
     implementation fg.deobf("curse.maven:in-control-257356:3101719")
     implementation fg.deobf("com.github.mcjty:mcjtytools:1.12-0.0.21")
     implementation fg.deobf("curse.maven:baubles-227083:2518667")
+    implementation fg.deobf("curse.maven:distant-horizons-508933:9004743")
 }
 
 mixin {

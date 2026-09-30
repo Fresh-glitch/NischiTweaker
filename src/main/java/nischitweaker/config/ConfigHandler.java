@@ -7,16 +7,14 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import nischitweaker.Tags;
-import nischitweaker.config.folders.BaubleyElytraConfig;
-import nischitweaker.config.folders.ChampionsConfig;
-import nischitweaker.config.folders.InControlConfig;
-import nischitweaker.config.folders.ZenUtilsConfig;
+import nischitweaker.config.folders.*;
 
 @BetterConfig(
 		modid = Tags.MODID,
 		version = Tags.CFG_VERSION,
 		bigCategoryComments = false,
-		lowerCaseCategories = false
+		lowerCaseCategories = false,
+		removeDeprecatedEntries = true
 )
 public class ConfigHandler {
 
@@ -29,16 +27,21 @@ public class ConfigHandler {
 	@Config.Name("Baubley Elytra")
 	public static BaubleyElytraConfig baubleyElytra = new BaubleyElytraConfig();
 
+	@Config.Name("Distant Horizons")
+	public static DistantHorizonsConfig distantHorizons = new DistantHorizonsConfig();
+
 	@Config.Name("Champions")
 	public static ChampionsConfig champions = new ChampionsConfig();
+
+	@Config.Name("Mod Containers")
+	public static ModContainerConfig modContainers = new ModContainerConfig();
 
 	@Mod.EventBusSubscriber
 	private static class EventHandler{
 		@SubscribeEvent
 		public static void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
-			if(event.getModID().equals(Tags.MODID)) {
+			if(event.getModID().equals(Tags.MODID))
 				BetterConfigManager.sync(Tags.MODID);
-			}
 		}
 	}
 }
