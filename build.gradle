@@ -74,6 +74,7 @@ dependencies {
     implementation fg.deobf("com.github.mcjty:mcjtytools:1.12-0.0.21")
     implementation fg.deobf("curse.maven:baubles-227083:2518667")
     implementation fg.deobf("curse.maven:distant-horizons-508933:9004743")
+    implementation fg.deobf("curse.maven:enchanter-tools-1590477:8803331")
 }
 
 mixin {

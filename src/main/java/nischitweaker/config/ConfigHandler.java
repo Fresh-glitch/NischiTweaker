@@ -11,6 +11,7 @@ import nischitweaker.config.folders.ChampionsConfig;
 import nischitweaker.config.folders.DistantHorizonsConfig;
 import nischitweaker.config.folders.InControlConfig;
 import nischitweaker.config.folders.ModContainerConfig;
+import nischitweaker.config.folders.VanillaConfig;
 
 @BetterConfig(
 		modid = Tags.MODID,
@@ -32,6 +33,9 @@ public class ConfigHandler {
 
 	@Config.Name("Mod Containers")
 	public static ModContainerConfig modContainers = new ModContainerConfig();
+
+	@Config.Name("Vanilla")
+	public static VanillaConfig vanilla = new VanillaConfig();
 
 	@Mod.EventBusSubscriber
 	private static class EventHandler{
