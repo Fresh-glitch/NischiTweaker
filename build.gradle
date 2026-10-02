@@ -136,7 +136,6 @@ publishMods {
         github {
             accessToken = providers.environmentVariable("GITHUB_TOKEN")
             repository = providers.environmentVariable("GITHUB_REPOSITORY").orElse("owner/repo")
-            commitish = "main"
         }
     }
 
