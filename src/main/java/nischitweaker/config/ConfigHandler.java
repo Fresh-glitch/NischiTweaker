@@ -13,6 +13,7 @@ import nischitweaker.config.folders.DistantHorizonsConfig;
 import nischitweaker.config.folders.InControlConfig;
 import nischitweaker.config.folders.ModContainerConfig;
 import nischitweaker.config.folders.VanillaConfig;
+import nischitweaker.config.folders.ZenUtilsConfig;
 
 @BetterConfig(
 		modid = Tags.MODID,
@@ -38,6 +39,9 @@ public class ConfigHandler {
 
 	@Config.Name("Vanilla")
 	public static VanillaConfig vanilla = new VanillaConfig();
+
+	@Config.Name("ZenUtils")
+	public static ZenUtilsConfig zenUtils = new ZenUtilsConfig();
 
 	@Mod.EventBusSubscriber
 	private static class EventHandler{
