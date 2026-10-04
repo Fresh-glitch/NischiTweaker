@@ -16,10 +16,9 @@ public class ZenUtilsShareTransformer extends HashMapClassNodeClassTransformer i
     protected void registerTransformers(IClassTransformerRegistry registry) {
         //Put #mixin Share on the parameter like Local
         if(!ConfigHandler.zenUtils.fixShareAnnotation) return;
-        registry.addOptional("youyihj.zenutils.impl.mixin.crafttweaker.MixinParsedZenClassMethod", "generatePlainMixinMethod", ClassWriter.COMPUTE_FRAMES | ClassWriter.COMPUTE_MAXS, method -> {
-            LdcInsnNode local = ASMUtil.first(method).ldcInsn("Local").find();
-            MethodInsnNode equals = ASMUtil.nextExclusive(method, local).methodInsn("equals").find();
-            ASMUtil.replace(method, equals,
+        registry.add("youyihj.zenutils.impl.mixin.crafttweaker.MixinParsedZenClassMethod", "generatePlainMixinMethod", ClassWriter.COMPUTE_FRAMES | ClassWriter.COMPUTE_MAXS, method -> {
+            ASMUtil.replace(method,
+                    ASMUtil.first(method).ldcInsn("Local").findThenNextExclusive().methodInsn("equals").find(),
                     new MethodInsnNode(Opcodes.INVOKESTATIC, "nischitweaker/asm/zenutils/ZenUtilsShareTransformer$Hook", "isLocalOrShare", "(Ljava/lang/String;Ljava/lang/Object;)Z", false)
             );
         });
