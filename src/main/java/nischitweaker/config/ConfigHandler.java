@@ -2,6 +2,7 @@ package nischitweaker.config;
 
 import meldexun.betterconfig.api.BetterConfig;
 import meldexun.betterconfig.api.BetterConfigManager;
+import meldexun.betterconfig.api.LoadEarly;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -20,6 +21,7 @@ import nischitweaker.config.folders.VanillaConfig;
 		lowerCaseCategories = false,
 		removeDeprecatedEntries = true
 )
+@LoadEarly
 public class ConfigHandler {
 
 	@Config.Name("In Control!")
