@@ -1,0 +1,9 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "nischitweaker:items/bucketed_bookwyrm"
+  },
+  "overrides": [
+    { "predicate": { "golden": 1 }, "model": "nischitweaker:item/bucketed_bookwyrm_golden" }
+  ]
+}

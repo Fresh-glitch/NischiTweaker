@@ -26,6 +26,9 @@ public class ConfigHandler {
 	@Config.Name("In Control!")
 	public static InControlConfig incontrol = new InControlConfig();
 
+	@Config.Name("Defiled Lands")
+	public static DefiledLandsConfig defiledlands = new DefiledLandsConfig();
+
 	@Config.Name("Distant Horizons")
 	public static DistantHorizonsConfig distantHorizons = new DistantHorizonsConfig();
 

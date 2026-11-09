@@ -2,3 +2,9 @@ nischitweaker.jei.qualitytools.luck=Chance increases with Luck
 nischitweaker.jei.qualitytools.chance=Reforging chance: %s
 nischitweaker.msg.hivewhispers=The hive whispers to you
 nischitweaker.msg.fearincapacitates=Fear incapacitates you
+
+item.nischitweaker.bucketed_bookwyrm.name=Book Wyrm in a Bucket
+item.nischitweaker.bucketed_bookwyrm_golden.name=Golden Book Wyrm in a Bucket
+item.nischitweaker.bucketed_bookwyrm.cooldown=Digesting for %ss
+item.nischitweaker.bucketed_bookwyrm.tooltip=Feed enchanted books in a crafting grid.
+item.nischitweaker.bucketed_bookwyrm.escaped=Your Book Wyrm hopped out of its bucket!
