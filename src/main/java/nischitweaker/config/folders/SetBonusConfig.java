@@ -12,4 +12,11 @@ public class SetBonusConfig {
     @MixinConfig.MixinToggle(mixinJson = "mixin.nischitweaker.setbonus.concurrencyfix.json", defaultValue = true)
     @MixinConfig.CompatHandling(modid = "setbonus", desired = true, warnIngame = false, reason = "Compat for SetBonus")
     public boolean concurrencyFix = true;
+
+    @Config.Comment("Fix NoSuchMethodError crash (PrefixedSearchTree.getMode) when SetBonus refreshes JEI tooltips with newer JEI versions")
+    @Config.Name("JEI SearchMode Fix (MixinToggle)")
+    @MixinConfig.MixinToggle(mixinJson = "mixin.nischitweaker.setbonus.jeisearchmodefix.json", defaultValue = true)
+    @MixinConfig.CompatHandling(modid = "setbonus", desired = true, warnIngame = false, reason = "Compat for SetBonus")
+    @MixinConfig.CompatHandling(modid = "jei", targetVersionRange = "[4.24.0.1042,)", desired = true, warnIngame = false, reason = "Compat for SetBonus x JEI 4.24.0.1042+ (moved SearchMode out of Config)")
+    public boolean jeiSearchModeFix = true;
 }
