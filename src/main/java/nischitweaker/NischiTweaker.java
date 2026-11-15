@@ -21,7 +21,8 @@ import nischitweaker.features.bookwyrmbucket.BucketedBookWyrmClient;
 public class NischiTweaker {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        if(Loader.isModLoaded("xpbook")) MinecraftForge.EVENT_BUS.register(GreaterXPTome.class);
+        if(Loader.isModLoaded("xpbook") && !ConfigHandler.xptome.additionalTomes.isEmpty())
+            MinecraftForge.EVENT_BUS.register(GreaterXPTome.class);
         if(Loader.isModLoaded("defiledlands") && ConfigHandler.defiledlands.bookwyrmBucket.bucketedBookWyrm) {
             MinecraftForge.EVENT_BUS.register(BucketedBookWyrm.class);
             if(event.getSide().isClient()) MinecraftForge.EVENT_BUS.register(BucketedBookWyrmClient.class);
