@@ -19,13 +19,13 @@ public class QuarkConfig {
     })
     @Config.Name("Deterministic Registration (MixinToggle)")
     @MixinConfig.MixinToggle(mixinJson = "mixin.nischitweaker.quark.deterministicregistration.json", defaultValue = true)
-    @MixinConfig.CompatHandling(modid = "quark", desired = true, warnIngame = false, reason = "Compat for Quark")
+    @MixinConfig.CompatHandling(modid = "quark", modName = "quark", desired = true, warnIngame = false, reason = "Only for original Quark, already fixed in Quark: RotN Edition")
     public boolean deterministicRegistration = true;
 
     @Config.Comment("Fixes a potential exploit in Quark")
     @Config.Name("Exploit Fix: Quark (MixinToggle)")
     @Config.RequiresMcRestart
     @MixinConfig.MixinToggle(mixinJson = "mixin.nischitweaker.quark.exploitfix.json", defaultValue = true)
-    @MixinConfig.CompatHandling(modid = "quark", desired = true, warnIngame = false, reason = "Compat for Quark")
+    @MixinConfig.CompatHandling(modid = "quark", modName = "quark", desired = true, warnIngame = false, reason = "Only for original Quark, already fixed in Quark: RotN Edition")
     public boolean exploitFix = true;
 }
