@@ -17,4 +17,11 @@ public class CreeperConfettiConfig {
     @MixinConfig.MixinToggle(mixinJson = "mixin.nischitweaker.creeperconfetti.desyncfix.json", defaultValue = true)
     @MixinConfig.CompatHandling(modid = "creeperconfetti", desired = true, warnIngame = false, reason = "Compat for Creeper Confetti")
     public boolean fixConfettiDesync = true;
+
+    @Config.Comment({
+            "Creepers can only explode into confetti while targeting a player.",
+            "Requires \"Fix Confetti Desync\"."
+    })
+    @Config.Name("Confetti Only When Targeting Player")
+    public boolean onlyWhenTargetingPlayer = true;
 }

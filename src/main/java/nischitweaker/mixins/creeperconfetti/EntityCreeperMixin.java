@@ -4,6 +4,7 @@ import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.sr2610.creeperconfetti.ConfigHandler;
 import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
@@ -19,7 +20,9 @@ public abstract class EntityCreeperMixin {
         EntityCreeper creeper = (EntityCreeper) (Object) this;
         World world = creeper.world;
         ConfettiHandlerInvoker handler = (ConfettiHandlerInvoker) CreeperConfettiPacket.confettiHandler;
-        if (world.isRemote || !handler.nischitweaker_willExplodeToConfetti()) {
+        boolean canConfetti = !world.isRemote
+                && (!nischitweaker.config.ConfigHandler.creeperconfetti.onlyWhenTargetingPlayer || creeper.getAttackTarget() instanceof EntityPlayer);
+        if (!canConfetti || !handler.nischitweaker_willExplodeToConfetti()) {
             original.call();
             return;
         }
