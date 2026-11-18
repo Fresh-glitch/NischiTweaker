@@ -58,6 +58,15 @@ public class VanillaConfig {
     @MixinConfig.MixinToggle(mixinJson = "mixin.nischitweaker.vanilla.brewingstandshiftclick.json", defaultValue = true)
     public boolean brewingStandShiftClick = true;
 
+    @Config.Comment({
+            "Stops sprinting when riding an entity like a boat.",
+            "Without this, the server still thinks the player is sprinting while riding."
+    })
+    @Config.Name("Stop Sprinting While Riding (MixinToggle)")
+    @Config.RequiresMcRestart
+    @MixinConfig.MixinToggle(mixinJson = "mixin.nischitweaker.vanilla.ridingsprint.json", defaultValue = true)
+    public boolean stopSprintingWhileRiding = true;
+
     //Own enum so the config doesn't load EnumDifficulty during coremod construction (obfuscated names aren't remapped yet)
     public enum Difficulty {
         PEACEFUL, EASY, NORMAL, HARD
