@@ -161,6 +161,9 @@ public class ConfigHandler {
 	@Config.Name("Creeper Confetti")
 	public static CreeperConfettiConfig creeperconfetti = new CreeperConfettiConfig();
 
+	@Config.Name("Better Survival")
+	public static BetterSurvivalConfig bettersurvival = new BetterSurvivalConfig();
+
 	@Config.Name("Minecraft")
 	public static VanillaConfig vanilla = new VanillaConfig();
 
