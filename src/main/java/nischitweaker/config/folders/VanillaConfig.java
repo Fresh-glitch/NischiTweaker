@@ -49,6 +49,15 @@ public class VanillaConfig {
     @MixinConfig.MixinToggle(mixinJson = "mixin.nischitweaker.vanilla.repaircontaineritems.json", defaultValue = true)
     public boolean fixRepairContainerItems = true;
 
+    @Config.Comment({
+            "Shift-clicking stacked potions or water bottles puts one into each empty bottle slot of the brewing stand.",
+            "Shift-clicking blaze powder puts it into the fuel slot first and only into the ingredient slot once the fuel slot is full"
+    })
+    @Config.Name("Brewing Stand Shift-Click Fix (MixinToggle)")
+    @Config.RequiresMcRestart
+    @MixinConfig.MixinToggle(mixinJson = "mixin.nischitweaker.vanilla.brewingstandshiftclick.json", defaultValue = true)
+    public boolean brewingStandShiftClick = true;
+
     //Own enum so the config doesn't load EnumDifficulty during coremod construction (obfuscated names aren't remapped yet)
     public enum Difficulty {
         PEACEFUL, EASY, NORMAL, HARD
