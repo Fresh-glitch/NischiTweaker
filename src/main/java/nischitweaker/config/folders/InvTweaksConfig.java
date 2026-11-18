@@ -12,4 +12,10 @@ public class InvTweaksConfig {
     @MixinConfig.MixinToggle(mixinJson = "mixin.nischitweaker.invtweaks.raceconditionfix.json", defaultValue = true)
     @MixinConfig.CompatHandling(modid = "inventorytweaks", desired = true, warnIngame = false, reason = "Compat for Inventory Tweaks")
     public boolean raceConditionFix = true;
+
+    @Config.Comment("Fix dedicated servers crashing on startup with JEI 4.24.0.1042+")
+    @Config.Name("Fix Server Crash With JEI (MixinToggle)")
+    @MixinConfig.MixinToggle(mixinJson = "mixin.nischitweaker.invtweaks.serverjeicrash.json", defaultValue = true)
+    @MixinConfig.CompatHandling(modid = "inventorytweaks", desired = true, warnIngame = false, reason = "Compat for Inventory Tweaks")
+    public boolean serverJeiCrashFix = true;
 }
