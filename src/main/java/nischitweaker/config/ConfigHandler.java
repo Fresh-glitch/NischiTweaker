@@ -158,6 +158,9 @@ public class ConfigHandler {
 	@Config.Name("Charm")
 	public static CharmConfig charm = new CharmConfig();
 
+	@Config.Name("Creeper Confetti")
+	public static CreeperConfettiConfig creeperconfetti = new CreeperConfettiConfig();
+
 	@Config.Name("Minecraft")
 	public static VanillaConfig vanilla = new VanillaConfig();
 

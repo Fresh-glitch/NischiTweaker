@@ -8,6 +8,7 @@ import nischitweaker.config.ConfigHandler;
 import nischitweaker.features.GreaterXPTome;
 import nischitweaker.features.bookwyrmbucket.BucketedBookWyrm;
 import nischitweaker.features.bookwyrmbucket.BucketedBookWyrmClient;
+import nischitweaker.network.PacketHandler;
 
 @Mod(
         modid = Tags.MODID,
@@ -21,6 +22,7 @@ import nischitweaker.features.bookwyrmbucket.BucketedBookWyrmClient;
 public class NischiTweaker {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        PacketHandler.init();
         if(Loader.isModLoaded("xpbook") && !ConfigHandler.xptome.additionalTomes.isEmpty())
             MinecraftForge.EVENT_BUS.register(GreaterXPTome.class);
         if(Loader.isModLoaded("defiledlands") && ConfigHandler.defiledlands.bookwyrmBucket.bucketedBookWyrm) {
