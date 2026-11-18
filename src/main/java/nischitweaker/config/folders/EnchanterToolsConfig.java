@@ -102,4 +102,13 @@ public class EnchanterToolsConfig {
     @MixinConfig.CompatHandling(modid = "enchanter_tools", desired = true, warnIngame = false, reason = "Compat for Enchanter Tools")
     @Order(10)
     public boolean inkwellMultipleEnchants = true;
+
+    @Config.Comment("Fixes Enchanter Tools' JEI plugin crashing (and skipping all its info pages) when one of its items is disabled.")
+    @Config.Name("Fix JEI Disabled Items (MixinToggle)")
+    @Config.RequiresMcRestart
+    @MixinConfig.MixinToggle(mixinJson = "mixin.nischitweaker.enchantertools.jeidisabled.json", defaultValue = true)
+    @MixinConfig.CompatHandling(modid = "enchanter_tools", desired = true, warnIngame = false, reason = "Compat for Enchanter Tools")
+    @MixinConfig.CompatHandling(modid = "jei", desired = true, warnIngame = false, reason = "Compat for JEI")
+    @Order(11)
+    public boolean fixJeiDisabledItems = true;
 }
