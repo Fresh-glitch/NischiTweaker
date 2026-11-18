@@ -12,7 +12,7 @@ public class GrapplingHookConfig {
         MixinUtil.conditionallyAddMixin("mixin.nischitweaker.grapplinghook.devcaptureposition.json", MixinUtil::isDev, "grapplemod");
     }
 
-    @Config.Comment("Add visible item cooldown to Ender Staff")
+    @Config.Comment("Add visible item cooldown to Ender Staff and make it take durability damage per launch")
     @Config.Name("Ender Staff Cooldown (MixinToggle)")
     @MixinConfig.MixinToggle(mixinJson = "mixin.nischitweaker.grapplinghook.cooldown.json", defaultValue = true)
     @MixinConfig.CompatHandling(modid = "grapplemod", desired = true, warnIngame = false, reason = "Compat for Grappling Hook Mod")

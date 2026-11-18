@@ -14,8 +14,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class LauncherItemMixin {
 
     @Inject(method = "dorightclick", at = @At("HEAD"), remap = false)
-    private void nischitweaker_addCooldown(ItemStack stack, World world, EntityPlayer player, CallbackInfo ci) {
-        if (!world.isRemote) return;
+    private void nischitweaker_addCooldownAndDamage(ItemStack stack, World world, EntityPlayer player, CallbackInfo ci) {
         player.getCooldownTracker().setCooldown(stack.getItem(), GrappleConfig.getconf().ender_staff_recharge);
+        if (!world.isRemote) stack.damageItem(1, player);
     }
 }
